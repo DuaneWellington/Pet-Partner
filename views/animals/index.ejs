@@ -1,0 +1,30 @@
+<!-- PATH: views/flights/index.ejs -->
+
+<%- include('../partials/header') %>
+
+ <h2>Pet List</h2>
+ <table id="list">
+   <thead>
+     <tr>
+       <th>Pet Type</th>
+       <th>Pet Classification</th>
+       <th>Pet Sex</th>
+       <th>Pet Date Of Birth</th>
+     </tr>
+   </thead>
+   <tbody>
+     <!-- Write the line of EJS to iterate over movies using forEach -->
+     <% pets.forEach( p => {  %>
+     <tr>
+         <td><%= p.petType %></td>
+         <td><%= p.petClassification %></td>
+         <td><%= p.petSex %></td>
+         <td><%= p.petAge %></td>
+         <td><a href="/pets/<%= p._id %>">DETAILS</a></td>
+     </tr>
+     <!-- Close the forEach using EJS here -->
+     <% }) %>
+   </tbody>
+ </table>
+
+ <%- include('../partials/footer') %>
