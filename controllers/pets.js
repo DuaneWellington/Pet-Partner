@@ -22,7 +22,7 @@ async function index(req, res) {
         const allPets = await Pet.find({})
         console.log(allPets, "allPets")
 
-        res.render('animals/index', {title: "All Pets"})
+        res.render('animals/index', {title: "All Pets", pets: allPets})
     }catch (err) {
         console.log('index error', err)
     }
