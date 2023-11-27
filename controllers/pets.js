@@ -12,7 +12,7 @@ const Pet = require('../models/pet')
 //NEW 
 
 function newPet (req, res) {
-    res.render('pets/new', {title: "Add Pet", errorMsg:''})
+    res.render('animals/new', {title: "Add Pet", errorMsg:''})
 }
 
 //INDEX
@@ -20,7 +20,7 @@ function newPet (req, res) {
 async function index(req, res) {
     try {
         const allPets = await Pet.find({})
-        res.render('pets/index', {title: "All Pets", pets: allPets})
+        res.render('animals/index', {title: "All Pets", pets: allPets})
     }catch (err) {
         console.log('index error', err)
     }
@@ -32,11 +32,11 @@ async function create(req, res) {
     try {
       await Pet.create(req.body);
       // Always redirect after CRUDing data
-      res.redirect('/pets', {errorMsg: err.message});
+      res.redirect('/animals', {errorMsg: err.message});
     } catch (err) {
       // Typically some sort of validation error
       console.log(err);
-      res.render('pets/new', { errorMsg: err.message });
+      res.render('animals/new', { errorMsg: err.message });
     }
  }
 
@@ -47,7 +47,7 @@ async function create(req, res) {
       
           console.log(pet)
           
-          res.render('pets/show', { title: "Pet Detail",pet });
+          res.render('animals/show', { title: "Pet Detail",pet });
         } catch (err) {
           console.log(err);
           next(Error(err));

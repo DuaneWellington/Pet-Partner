@@ -15,7 +15,7 @@
   "version": "1.0.0",
   "main": "./bin/www",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "./bin/www"
   },
   "author": "",
   "license": "ISC"

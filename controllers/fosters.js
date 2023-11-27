@@ -13,7 +13,7 @@ module.exports = {
   
     pet.adoptions.push(req.body)
   
-    try{
+    try {
   //append/push our data using a built in mongoose function... save()
         await pet.save()
     }

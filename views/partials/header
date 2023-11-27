@@ -10,7 +10,9 @@
   <body>
     <nav>
       <a href="/pets/new" <%- title === 'Add Pet' ? 'class="active"' : '' %>>ADD PET</a>
-      <a href="/pets" <%- title === 'All Pets' ? 'class="active"' : '' %>>ALL PETS</a>
+      <a href="/pets" <%- title === 'All Pets' ? 'class="active"' : '' %>>>ALL PETS</a>
     </nav>
     <main>
       <h1><%= title %></h1>
+    </main>
+  </body>
