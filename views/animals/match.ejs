@@ -1,0 +1,89 @@
+<!-- PATH: views/flights/new.ejs -->
+
+
+<h2>Enter a Pet</h2>
+<form id="match-form" action="/pets" method="POST">
+  <label>Pet Type:
+    <select name="petType">
+        <option value="CAT">CAT</option>
+        <option value="DOG">DOG</option>
+        <option value="HORSE">HORSE</option>
+        <option value="LIZARD">LIZARD</option>
+        <option value="FERRET">FERRET</option>
+        <option value="GOLDFISH">GOLDFISH</option>
+        <option value="ROCK">ROCK</option>
+    </select>
+  </label><br>
+
+  <label>Pet Size:
+    <select name="petSize">
+          <option value="SMALL"></option>
+          <option value="MEDIUM"></option>
+          <option value="LARGE"></option>
+          <option value="FARM"></option>
+          <option value="EXOTIC"></option>
+          <option value="MISC"></option>
+    </select>
+  </label><br>
+
+  <label>Pet Color:
+    <select name="petColor">
+          <option value="BLACK"></option>
+          <option value="BROWN"></option>
+          <option value="GRAY"></option>
+          <option value="MIXED"></option>
+          <option value="ORANGE"></option>
+          <option value="PAINTED"></option>
+          <option value="WHITE"></option>
+          <option value="OTHER"></option>
+    </select>
+  </label><br>
+  
+  <label>Pet Gender:
+    <select name="petGender">
+          <option value="FEMALE"></option>
+          <option value="MALE"></option>
+          <option value="WATEVER"></option>
+    </select>
+  </label><br>
+
+  <label>Pet Age:
+    <input type="number" name="petAge">
+  </label><br>
+
+  <label>Pet Environment:
+    <select name="petEnvironment">
+          <option value="APARTMENT"></option>
+          <option value="FARM"></option>
+          <option value="SINGLE FAMILY HOME"></option>
+          <option value="MULTI FAMILY HOME"></option>
+          <option value="BOAT"></option>
+          <option value="OTHER"></option>
+          <option value="LOFT"></option>
+          <option value="VAN/RV"></option>
+    </select>
+  </label><br>
+
+  <label>Pet Classification:
+    <input type="checkbox" name="spayed_neutered">
+    <input type="checkbox" name="house_trained" checked>
+    <input type="checkbox" name="declawed">
+    <input type="checkbox" name="special_needs">
+    <input type="checkbox" name="shots_current">
+  </label><br>
+
+  <label>Pet Temperament:
+    <select name="petTemperament">
+          <option value="AFFECTIONATE"></option>
+          <option value="TIMID"></option>
+          <option value="INDEPENDENT"></option>
+          <option value="ENERGETIC"></option>
+    </select>
+  </label><br>
+  
+  <button type="submit">Find my Pet</button>
+</form>
+
+<p><%= errorMsg %></p>
+
+<%- include('../partials/footer') %>

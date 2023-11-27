@@ -1,15 +1,18 @@
 * {
   box-sizing: border-box;
   font-family: Arial;
+
   color: #f0f0f0; 
 }
 
 /* body Styles */
 body {
+
   margin: 0;
   height: 100vh;
   display: grid;
   grid-template-rows: 50px 1fr;
+
   grid-template-areas: 
     "nav"
     "main";
@@ -19,6 +22,7 @@ body {
 body > nav {
   grid-area: nav;
   background-color: #bad7d2; 
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -33,6 +37,7 @@ nav > button {
   cursor: pointer;
 }
 
+
 nav > button:hover:not(.active) {
   color: #f0f0f0;
   background-color: #7ee5bd;  
@@ -43,12 +48,14 @@ nav > button.active {
   cursor: default;
 }
 
+
 /* Main Content Styles */
 body > main {
   grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   background-color: #d1e3e2; 
   padding: 20px;
   overflow-y: scroll;
@@ -82,6 +89,7 @@ body > main h1:first-child {
 }
 
 
+
 table {
   font-size: 20px;
 }
@@ -101,17 +109,21 @@ table td {
   min-width: 100px;
 }
 
+
 #list a {
   border-radius: 4px;
   background-color: #bad7d2; /* Seafoam green color */
+
   padding: 4px;
   text-decoration: none;
   font-size: 14px;
 }
 
+
 #list a:hover {
   background-color: #f0f0f0;
 }
+
 
 /* Specific Page Styles */
 #show-page,
@@ -125,6 +137,7 @@ table td {
   font-weight: bold;
 }
 
+
 /* New Foster Heading Styles */
 .new-foster-heading {
   display: flex;
@@ -132,6 +145,7 @@ table td {
   align-items: center;
   margin: 0 0 2em 0;
 }
+
 
 .new-foster-heading select {
   min-width: 8rem;
