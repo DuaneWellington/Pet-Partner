@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema
 
-//EX1: Adoption Schema
+//EX1: Foster Schema
 const fosterSchema = new Schema ({
     fosterer: {
         type: String },
@@ -51,6 +51,7 @@ const petSchema = new Schema({
         },
 
     petTemperament: {
+        type: String,
         enum: ['AFFECTIONATE', 'TIMID', 'INDEPENDENT', 'ENERGETIC']
     },
     petImage: {
@@ -67,5 +68,5 @@ const petSchema = new Schema({
   });
 
 
-//compile the flight schema and export it
+//compile the pet schema and export it
 module.exports = mongoose.model('Pet', petSchema)

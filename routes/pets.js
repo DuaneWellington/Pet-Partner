@@ -9,12 +9,12 @@ const petsCtrl = require('../controllers/pets')
 router.get('/', petsCtrl.index)
 
 //router -> GET /pets/new
-router.get('/new', petsCtrl.new)
+// router.get('/new', petsCtrl.new)
 
 //router -> POST /pets
-router.post('/', petsCtrl.create)
+// router.post('/', petsCtrl.create)
 
-//router -> GET /pets/:id
-router.get('/:id', petsCtrl.show)
+// //router -> GET /pets/:id
+// router.get('/:id', petsCtrl.show)
 
 module.exports = router;
