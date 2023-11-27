@@ -1,8 +1,127 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: Arial;
+  color: #F0F0F0;
 }
-
-a {
-  color: #00B7FF;
+/* body Styles */
+body {
+  background-color: green;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "main";
+}
+/* Navigation Styles */
+body > nav {
+  grid-area: nav;
+  background-color: #BAD7D2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+nav > button {
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+nav > button:hover:not(.active) {
+  color: #F0F0F0;
+  background-color: #7EE5BD;
+}
+nav > button.active {
+  color: #F0F0F0;
+  cursor: default;
+}
+/* Main Content Styles */
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D1E3E2;
+  padding: 20px;
+  overflow-y: scroll;
+}
+body > main h1:first-child {
+  margin-bottom: 50px;
+}
+/* Form Styles */
+#new-form,
+#adoption-form,
+#new-foster-form {
+  display: grid;
+  grid-gap: 10px;
+}
+#new-form *,
+#adoption-form *,
+#new-foster-form * {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+#new-form input[type="submit"],
+#adoption-form input[type="submit"],
+#new-foster-form button[type="submit"] {
+  width: 8rem;
+  margin-left: auto;
+}
+table {
+  font-size: 20px;
+}
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid #4B6F74; /* Darker seafoam green color */
+}
+table td {
+  padding: 10px;
+  text-align: center;
+}
+#list td:nth-child(2),
+#list td:nth-child(3) {
+  min-width: 100px;
+}
+#list a {
+  border-radius: 4px;
+  background-color: #BAD7D2; /* Seafoam green color */
+  padding: 4px;
+  text-decoration: none;
+  font-size: 14px;
+}
+#list a:hover {
+  background-color: #F0F0F0;
+}
+/* Specific Page Styles */
+#show-page,
+#adoption-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+#show-page div:nth-child(even) {
+  font-weight: bold;
+}
+/* New Foster Heading Styles */
+.new-foster-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 2em 0;
+}
+.new-foster-heading select {
+  min-width: 8rem;
+}
+/* Input Style */
+input[type="submit"],
+#new-foster-form input {
+  width: 8rem;
+}
+#new-foster-form input {
+  height: 2rem;
+  width: 100%;
 }
