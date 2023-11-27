@@ -1,9 +1,9 @@
-// PATH controllers/adoptions.js
+// PATH controllers/fosters.js
 
 module.exports = {
     create,
   }
-  const Flight = require('../models/pet')
+  const Foster = require('../models/foster')
   
   //find a reosurce based on its ID
   async function create(req, res) {
@@ -13,7 +13,7 @@ module.exports = {
   
     pet.adoptions.push(req.body)
   
-    try{
+    try {
   //append/push our data using a built in mongoose function... save()
         await pet.save()
     }

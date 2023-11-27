@@ -13,6 +13,8 @@ router.get('/new', petsCtrl.new)
 
 //router -> POST /pets
 router.post('/', petsCtrl.create)
+
+//router -> GET /pets/:id
 router.get('/:id', petsCtrl.show)
 
 module.exports = router;
