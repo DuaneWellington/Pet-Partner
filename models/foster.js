@@ -4,9 +4,9 @@ const mongoose = require("mongoose") //import mongoose
 
 const Schema = mongoose.Schema; //declare Schema
 
-const fosterSchema = new Schema(
+const userSchema = new Schema(
   {
-    fosterInfo: {
+    userInfo: {
       firstName: {
         type: String,
       },
