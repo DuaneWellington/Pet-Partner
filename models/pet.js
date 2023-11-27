@@ -26,7 +26,7 @@ const petSchema = new Schema({
 
     petColor: {
         type: String,
-    },
+        enum: ['BLACK', 'BROWN', 'GRAY', 'MIXED', 'ORANGE', 'PAINTED', 'WHITE', 'OTHER'] },
 
     petGender: {
         type: String,
