@@ -14,48 +14,48 @@
     <div><%= pet.petAge %></div>
 </section>
 
-  <!-- adoption information Form -->
+  <!-- fosterer information Form -->
 <section>
-    <br><br><h2>Add/Update Adoption Information</h2>
-    <form id="add-adoption-form" method="POST"
-      action="/pets/<%= pet._id %>/adoptions">
-        <label>Name of Adopter:</label>
-        <input type="text" name="adopter"></input>
+    <br><br><h2>Add/Update Foster Information</h2>
+    <form id="add-foster-form" method="POST"
+      action="/pets/<%= pet._id %>/fosters">
+        <label>Name of Fosterer:</label>
+        <input type="text" name="fosterer"></input>
 
         <label for="petDOB">Pet Birthday:</label>
         <input
             type="datetime-local"
-            id="adoption-id"
-            name="adoption-date-time"
+            id="foster-id"
+            name="foster-date-time"
             value="2023-11-18T19:30"
             min="1903-11-07T00:00"
             max="2030-11-14T00:00" />
 
-        <input type="submit" value="Add Adoption">
+        <input type="submit" value="Add Foster">
     </form>
 </section>
 
-<!-- Show a list of the adoptions for the pet selected -->
+<!-- Show a list of the fosters for the pet selected -->
 <section>
-    <% if (pet.adoptions.length) { %>
+    <% if (pet.fosters.length) { %>
       <table>
         <thead>
           <tr>
-            <th>Adopter name</th>
+            <th>Fosterer name</th>
             <th>Pet Birthday</th>
           </tr>
         </thead>
         <tbody>
-          <% pet.adoptions.forEach(function(a) { %>
+          <% pet.fosters.forEach(function(a) { %>
             <tr>
-              <td><%= a.adopter %></td>
-              <td><%= d.adoptionDate %></td>
+              <td><%= a.fosterer %></td>
+              <td><%= d.fosterDate %></td>
             </tr>
           <% }); %>
         </tbody>
       </table>
     <% } else { %>
-      <h5>There are no adoptions yet :( )...</h5>
+      <h5>There are no fosters yet :( )...</h5>
     <% } %>
   </section>
 

@@ -6,7 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const petsRouter = require('./routes/pets');
-const adoptionsRouter = require('./routes/adoptions');
+const adoptionsRouter = require('./routes/fosters');
 
 const app = express();
 

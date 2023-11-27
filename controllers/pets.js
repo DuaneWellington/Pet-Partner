@@ -31,7 +31,7 @@ async function create(req, res) {
 
     try {
       await Pet.create(req.body);
-      // Always redirect after CUDing data
+      // Always redirect after CRUDing data
       res.redirect('/pets', {errorMsg: err.message});
     } catch (err) {
       // Typically some sort of validation error

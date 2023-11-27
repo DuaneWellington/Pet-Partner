@@ -7,6 +7,9 @@ const petsCtrl = require('../controllers/pets')
 
 //router -> GET /pets/index using default path
 router.get('/', petsCtrl.index)
+router.get('/', (req, res) => {
+    res.send('This is the /pets route');
+});
 
 //router -> GET /pets/new
 router.get('/new', petsCtrl.new)

@@ -11,11 +11,11 @@
     "morgan": "^1.10.0"
   },
   "name": "project-2",
-  "description": "",
+  "description": "Pets Pets Pets",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./bin/www",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
   "author": "",
   "license": "ISC"
