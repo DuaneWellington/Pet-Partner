@@ -6,11 +6,11 @@
 <h2>Tell Us About Yourself!</h2>
 <form id="user-form" action="/users" method="POST">
   <label>First Name:
-    <input type="String" name="firstName">
+    <input type="String" name="userInfo.firstName">
   </label>
 
   <label>Last Name:
-    <input type="String" name="lastName">
+    <input type="String" name="userInfo.lastName">
   </label>
 
   <label>Age:
@@ -18,19 +18,19 @@
   </label><br>
 
   <label>Street Address 1:
-    <input type="String" name="street1">
+    <input type="String" name="userInfo.address.street1">
   </label><br>
   <label>Street Address 2:
-    <input type="String" name="street2">
+    <input type="String" name="userInfo.address.street2">
   </label><br>
   <label>City:
-    <input type="String" name="city">
+    <input type="String" name="userInfo.address.city">
   </label><br>
   <label>State/Province:
-    <input type="String" name="fosterState">
+    <input type="String" name="userInfo.address.fosterState">
   </label><br>
   <label>Zip/Postal:
-    <input type="String" name="postalCode">
+    <input type="String" name="userInfo.address.postalCode">
   </label><br>
 
   <label>Country:
