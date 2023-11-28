@@ -22,11 +22,13 @@ const petSchema = new Schema({
 
     petSize: {
         type: String,
-        enum: ['SMALL', 'MEDIUM', 'LARGE', 'FARM', 'EXOTIC', 'MISC'] },
+        enum: ['SMALL', 'MEDIUM', 'LARGE', 'FARM', 'EXOTIC', 'MISC'],
+        default: 'MEDIUM'},
 
     petColor: {
         type: String,
-        enum: ['BLACK', 'BROWN', 'GRAY', 'MIXED', 'ORANGE', 'PAINTED', 'WHITE', 'OTHER'] },
+        enum: ['BLACK', 'BROWN', 'GRAY', 'MIXED', 'ORANGE', 'PAINTED', 'WHITE', 'OTHER'],
+        default: 'BLACK'},
 
     petGender: {
         type: String,
