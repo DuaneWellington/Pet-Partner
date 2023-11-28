@@ -9,7 +9,7 @@ require('./config/database') // require the database
 
 const indexRouter = require('./routes/index');
 const petsRouter = require('./routes/pets');
-// const fostersRouter = require('./routes/fosters');
+const usersRouter = require('./routes/users');
 
 const app = express();
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/pets', petsRouter);
-// app.use('/fosters', fostersRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
