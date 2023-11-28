@@ -1,7 +1,8 @@
-<!-- PATH: views/flights/new.ejs -->
+<!-- PATH: views/animals/match.ejs -->
 
+<%- include('../partials/header') %>
 
-<h2>Enter a Pet</h2>
+<h2>What pet would you like to find?</h2>
 <form id="match-form" action="/pets" method="POST">
   <label>Pet Type:
     <select name="petType">
@@ -17,33 +18,33 @@
 
   <label>Pet Size:
     <select name="petSize">
-          <option value="SMALL"></option>
-          <option value="MEDIUM"></option>
-          <option value="LARGE"></option>
-          <option value="FARM"></option>
-          <option value="EXOTIC"></option>
-          <option value="MISC"></option>
+          <option value="SMALL">SMALL</option>
+          <option value="MEDIUM">MEDIUM</option>
+          <option value="LARGE">LARGE</option>
+          <option value="FARM">FARM</option>
+          <option value="EXOTIC">EXOTIC</option>
+          <option value="MISC">MISC</option>
     </select>
   </label><br>
 
   <label>Pet Color:
     <select name="petColor">
-          <option value="BLACK"></option>
-          <option value="BROWN"></option>
-          <option value="GRAY"></option>
-          <option value="MIXED"></option>
-          <option value="ORANGE"></option>
-          <option value="PAINTED"></option>
-          <option value="WHITE"></option>
-          <option value="OTHER"></option>
+          <option value="BLACK">BLACK</option>
+          <option value="BROWN">BROWN</option>
+          <option value="GRAY">GRAY</option>
+          <option value="MIXED">MIXED</option>
+          <option value="ORANGE">ORANGE</option>
+          <option value="PAINTED">PAINTED</option>
+          <option value="WHITE">WHITE</option>
+          <option value="OTHER">OTHER</option>
     </select>
   </label><br>
   
   <label>Pet Gender:
     <select name="petGender">
-          <option value="FEMALE"></option>
-          <option value="MALE"></option>
-          <option value="WATEVER"></option>
+          <option value="FEMALE">FEMALE</option>
+          <option value="MALE">MALE</option>
+          <option value="WHATEVER">OTHER</option>
     </select>
   </label><br>
 
@@ -53,14 +54,14 @@
 
   <label>Pet Environment:
     <select name="petEnvironment">
-          <option value="APARTMENT"></option>
-          <option value="FARM"></option>
-          <option value="SINGLE FAMILY HOME"></option>
-          <option value="MULTI FAMILY HOME"></option>
-          <option value="BOAT"></option>
-          <option value="OTHER"></option>
-          <option value="LOFT"></option>
-          <option value="VAN/RV"></option>
+          <option value="APARTMENT">APARTMENT</option>
+          <option value="FARM">FARM</option>
+          <option value="SINGLE FAMILY HOME">SINGLE HOME</option>
+          <option value="MULTI FAMILY HOME">MULTI HOME</option>
+          <option value="BOAT">BOAT</option>
+          <option value="OTHER">OTHER</option>
+          <option value="LOFT">LOFT</option>
+          <option value="VAN/RV">VAN/RV</option>
     </select>
   </label><br>
 
@@ -74,10 +75,10 @@
 
   <label>Pet Temperament:
     <select name="petTemperament">
-          <option value="AFFECTIONATE"></option>
-          <option value="TIMID"></option>
-          <option value="INDEPENDENT"></option>
-          <option value="ENERGETIC"></option>
+          <option value="AFFECTIONATE">AFFECTIONATE</option>
+          <option value="TIMID">TIMID</option>
+          <option value="INDEPENDENT">INDEPENDENT</option>
+          <option value="ENERGETIC">ENERGETIC</option>
     </select>
   </label><br>
   
@@ -86,4 +87,4 @@
 
 <p><%= errorMsg %></p>
 
-<%- include('../partials/footer') %>
+<%- include('../partials/header') %>
