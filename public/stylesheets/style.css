@@ -1,21 +1,51 @@
 * {
   box-sizing: border-box;
-  font-family: Arial;
+  font-family: fantasy;
+
 
 }
 
 /* body Styles */
 body {
-
+/* background-color: honeydew; */
   margin: 0;
   height: 100vh;
-  display: grid;
+  background-image: url('img/backroundleaf.jpeg');
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
   grid-template-rows: 50px 1fr;
 
   grid-template-areas: 
     "nav"
     "main";
+} 
+
+/* updates trying morning */
+/* .flex-parent {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  background-image: url('img/backround.jpeg');
+  background-size: cover;
+  border: 2px yellowgreen;
+  
+  border-radius: 10px;
+} */
+
+
+/* updates */
+#match-form {
+  background-color: rgb(160, 166, 47); /* Replace with your desired background color */
+  padding: 20px; /* Adjust padding for desired spacing around the form */
+  border-radius: 10px; /* Adjust for rounded corners if needed */
 }
+
 
 /* Navigation Styles */
 body > nav {
@@ -26,8 +56,23 @@ body > nav {
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 30px;
+} 
+/* // */
+nav > a {
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #070101;
 }
 
+nav > a:hover {
+  color: #61c07f;
+  background-color: #7ee5bd;
+}
+/* // */
 nav > button {
   margin: 20px;
   padding: 10px;
@@ -38,12 +83,12 @@ nav > button {
 
 
 nav > button:hover:not(.active) {
-  color: #f0f0f0;
+  color: #61c07f;
   background-color: #7ee5bd;  
 }
 
 nav > button.active {
-  color: #f0f0f0;
+  color: #070101;
   cursor: default;
 }
 
@@ -55,7 +100,7 @@ body > main {
   flex-direction: column;
   align-items: center;
 
-  background-color: #d1e3e2; 
+  background-color: #11605c; 
   padding: 20px;
   overflow-y: scroll;
 }
@@ -160,6 +205,32 @@ input[type="submit"],
 #new-foster-form input {
   height: 2rem;
   width: 100%;
+} 
+
+
+/* #list{
+  color:#11605c;
+} 
+
+#match-form{
+  color: #2a5939;
+} */
+
+
+/* Add this CSS in your stylesheets or within a style tag in your HTML/EJS file */
+
+#match-form button {
+  background-color: #8bd4bc; /*background color */
+  color: #fff1d1; /*  text color */
+  padding: 10px 20px; /*  padding for desired size */
+  border: none;
+  border-radius: 15px; /* Adjust  rounded corners */
+  cursor: pointer; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#match-form button:hover {
+  background-color: #07fdbf78; /* hover background color */
 }
 
 /* body {
