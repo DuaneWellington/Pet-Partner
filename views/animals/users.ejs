@@ -1,0 +1,80 @@
+<!-- PATH: views/animals/users.ejs -->
+
+<%- include('../partials/header') %>
+
+
+<h2>Tell Us About Yourself!</h2>
+<form id="user-form" action="/users" method="POST">
+  <label>Foster Parent:
+    <input type="String" name="userInfo">
+  </label>
+  
+  <label>First Name:
+    <input type="String" name="firstName">
+  </label><br>
+
+  <label>Last Name:
+    <input type="String" name="lastName">
+  </label>
+
+  <label>Age:
+    <input type="number" name="fosterAge">
+  </label><br>
+
+  <label>Address:
+    <input type="String" name="address">
+  </label>
+
+  <label>Street Address 1:
+    <input type="String" name="street1">
+  </label><br>
+  <label>Street Address 2:
+    <input type="String" name="street2">
+  </label><br>
+  <label>City:
+    <input type="String" name="city">
+  </label><br>
+  <label>State/Province:
+    <input type="String" name="fosterState">
+  </label><br>
+  <label>Zip/Postal:
+    <input type="String" name="postalCode">
+  </label><br>
+
+  <label>Country:
+    <select name="Country">
+          <option value="CANADA">CANADA</option>
+          <option value="UNITED STATES">UNITED STATES</option>
+    </select>
+  </label><br>
+
+
+  <label>Phone No:
+    <input type="String" name="phoneNo">
+  </label><br>
+  <label>Pet Age:
+    <input type="String" name="areaCode">
+  </label><br>
+  <label>Pet Age:
+    <input type="String" name="phoneNumber">
+  </label><br>
+  <label>Foster Start Date:
+    <input type="date" name="fosterStartDate">
+  </label><br>
+  <label>email:
+    <input type="String" name="emailAddress">
+  </label><br>
+
+  <label>Foster Duration:
+    <input type="checkbox" name="twoWeeks" value="true"> Two Weeks
+    <input type="checkbox" name="oneMonth" value="true"> One Month
+    <input type="checkbox" name="threeMonths" value="true"> Three Months
+    <input type="checkbox" name="sixMonths" value="true"> Six Months
+  </label><br>
+
+  <button type="submit">Submit Form</button>
+</form>
+
+<p><%= errorMsg %></p>
+
+<%- include('../partials/footer') %>
