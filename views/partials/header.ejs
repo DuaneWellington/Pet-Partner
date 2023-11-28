@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <nav>
+      <a href="/pets/match" <%- title === 'Match Pet' ? 'class="active"' : '' %>>FIND MATCH</a>
+      
+      <a href="/pets" <%- title === 'All Pets' ? 'class="active"' : '' %>>ALL PETS</a>
+    </nav>
     <main>
       <h1><%= title %></h1>
     </main>
