@@ -7,7 +7,7 @@
 
 /* body Styles */
 body {
-background-color: honeydew;
+/* background-color: honeydew; */
   margin: 0;
   height: 100vh;
   background-image: url('img/backroundleaf.jpeg');
@@ -41,7 +41,7 @@ background-color: honeydew;
 
 /* updates */
 #match-form {
-  background-color: rgb(253, 235, 210); /* Replace with your desired background color */
+  background-color: rgb(160, 166, 47); /* Replace with your desired background color */
   padding: 20px; /* Adjust padding for desired spacing around the form */
   border-radius: 10px; /* Adjust for rounded corners if needed */
 }
@@ -56,8 +56,23 @@ body > nav {
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 30px;
+} 
+/* // */
+nav > a {
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #070101;
 }
 
+nav > a:hover {
+  color: #61c07f;
+  background-color: #7ee5bd;
+}
+/* // */
 nav > button {
   margin: 20px;
   padding: 10px;

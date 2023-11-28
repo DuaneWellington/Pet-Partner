@@ -1,6 +1,8 @@
 <!-- PATH: views/animals/match.ejs -->
 
-<%- include('../partials/header') %>
+<%- include('../partials/header') %> 
+
+
 
 <h2>What pet would you like to find?</h2>
 <form id="match-form" action="/pets" method="POST">
@@ -86,5 +88,13 @@
 </form>
 
 <p><%= errorMsg %></p>
+<!-- 
+<%- include('../partials/header') %>  -->
 
-<%- include('../partials/header') %>
+
+<!-- Buttons at the bottom -->
+<!-- <div style="margin-top: 20px;">
+  <button type="submit">Find my Pet</button>
+</div> -->
+
+<%- include('../partials/footer') %>
