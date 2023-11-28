@@ -3,18 +3,13 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
-// const users = require('../models/user');
-
-//USER
-
-// function users (req, res) {
-//   res.render('animals/users', {title: "Users", errorMsg:''})
-// }
+const Pet = require('../models/pet');
 
   
 //INDEX
 
 async function index(req, res) {
+  // res.send("HOLDER: user index");
   try {
       const allUsers = await User.find({});
       console.log(allUsers, "allUsers");
@@ -27,16 +22,22 @@ async function index(req, res) {
 
 // CREATE
 async function create(req, res) {
+  const userData = {...req.body}
+  if (userData.fosterAge <= 0) {
+    userData.fosterAge = 18
+  }
   try {
-    await User.create(req.body);
+    await User.create(userData);
     // Always redirect after CRUDing data
-    res.redirect('/users', {errorMsg: err.message});
+    res.render('/animals/match', { errorMsg: err.message });
   } catch (err) {
     // Typically some sort of validation error
     console.log(err);
     res.render('animals/users', { errorMsg: err.message });
   }
 }
+// SHOW
+
 
 
   
@@ -62,24 +63,25 @@ async function create(req, res) {
   
   //Add a new user
   async function newUser(req, res) {
-    try {
-      //create a new user instance
-      const newUser = new User(req.body);
-      //Save new user to the database
-      await newUser.save();
-      // res.render('users/new', {title: "Add new User", users: await User.findById(req.params.id)})
+    res.render('animals/users')
+    // try {
+    //   //create a new user instance
+    //   const newUser = new User(req.body);
+    //   //Save new user to the database
+    //   await newUser.save();
+    //   // res.render('users/new', {title: "Add new User", users: await User.findById(req.params.id)})
 
-      res.redirect(`/users/${newUser._id}`);
-    } catch (err) {
-        console.log(err);
-        res.render('error', { error: err });
-    }
-  }
+    //   res.redirect(`/users/${newUser._id}`);
+    // } catch (err) {
+    //     console.log(err);
+    //     res.render('error', { error: err });
+    // }
+  };
 
   module.exports = {
     index,
     create,
     // users,
-      newUser,
-      router
+     newUser,
+    //  show
     }

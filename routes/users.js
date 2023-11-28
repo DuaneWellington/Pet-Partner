@@ -13,7 +13,7 @@ router.get('/', usersCtrl.index)
 //router -> POST /users
 router.post('/', usersCtrl.newUser)
 
-
+router.post('/users', usersCtrl.create)
 
 
 // //router -> GET /pets/:id
