@@ -11,7 +11,7 @@ router.get('/', usersCtrl.index)
 // router.get('/users', usersCtrl.index)
 
 //router -> POST /users
-router.post('/', usersCtrl.newUser)
+// router.post('/', usersCtrl.newUser)
 
 router.post('/', usersCtrl.create)
 

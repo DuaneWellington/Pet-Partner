@@ -36,17 +36,17 @@ async function create(req, res) {
     'firstName',
   ];
 
-  const missingFields = requiredFields.filter(field => !userData[field]);
-  if (missingFields.length > 0) {
-    return res.render('animals/users', {errorMsg: `Missing required fields: ${missingFields.join(', ')}`});
-  }
+  // const missingFields = requiredFields.filter(field => !userData[field]);
+  // if (missingFields.length > 0) {
+  //   return res.render('animals/users', {errorMsg: `Missing required fields: ${missingFields.join(', ')}`});
+  // }
 
   if (userData.fosterAge <= 0) {
     userData.fosterAge = 18
   }
 
   try {
-    const newUser = await User.create(userData);
+    const newUser = await User.create(req.body);
     console.log(User, 'User Data')
     res.redirect(`/animals/match/${newUser._id}`);
     // await User.create(userData);
@@ -101,8 +101,8 @@ function renderMatchForm(req, res) {
   //   });
   
   //Add a new user
-  async function newUser(req, res) {
-    // res.render('animals/users')
+  function newUser(req, res) {
+    res.render('animals/users')
     // try {
     //   //create a new user instance
     //   const newUser = new User(req.body);
@@ -121,7 +121,7 @@ function renderMatchForm(req, res) {
     index,
     create,
     // users,
-     newUser,
+     new: newUser,
      showMatchForm,
      renderMatchForm,
     //  show
