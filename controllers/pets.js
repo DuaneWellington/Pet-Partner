@@ -18,10 +18,10 @@ function matchPet (req, res) {
     res.render('animals/match', {title: "Match Pet", errorMsg:''})
 }
 
-//INDEX
+//INDEX (SHOW ALL PETS PAGE)
 
 async function index(req, res) {
-  console.log("FUNCTION:  INDEX(ALL PETS")
+  
     try {
         const allPets = await Pet.find({})
         // console.log(allPets, "allPets")
@@ -31,7 +31,7 @@ async function index(req, res) {
         console.log('index error', err)
     }
 }
-// test
+
 // CREATE
 async function create(req, res) {
     console.log("CREATE FUNCTION -->")
@@ -45,29 +45,24 @@ async function create(req, res) {
       res.render('animals/match', { errorMsg: err.message });
     }
  }
-// const petTypeInput = 'Dog';
-// const petColorInput = 'Brown';
-// const petSizeInput = 'Medium';
 
 async function findMatchingPet(req, res) {
     console.log("FUNCTION:  FIND MATCHING PET")
     try {
+      const matchingArray = []  // set up an empty array to be used to push the data found from the db collection
       // res.send(req.body)
       // Search for a pet with matching criteria
-      // const matchingPet = await Pet.findOne({
       const matchingPet = await Pet.findOne({
         petType: req.body.petType,
         petColor: req.body.petColor,
         petSize: req.body.petSize,
        });
+       matchingArray.push(matchingPet) // this is needed as the index page is expecting the data to be in an array format
       // FOR TESTING ONLY Return the matching pet or null if not found
-      console.log(matchingPet)
-      // return matchingPet;
+     
       // if no match show only the matching petType
-      res.redirect(`/pets/${matchingPet._id}`);
-      // res.render(`/animals/index/${matchingPet._id}`);
-      // res.render(`index${matchingPet._id}`);
-      // res.render('animals/index', {title: "Results", pets: matchingPets} )
+      
+      res.render('animals/index', {title: "Results", pets: matchingArray} )
       // res.send(matchingPet)
     } catch (error) {
       console.error('Error connecting to MongoDB:', error);
