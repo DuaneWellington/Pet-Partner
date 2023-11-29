@@ -11,7 +11,8 @@ module.exports = {
 
 const Pet = require('../models/pet')
 
-//MATCH
+//MATCH (SHOW THE MATCH FORM)
+//test
 
 function matchPet (req, res) {
     console.log("FUNCTION:  MATCHPET(MATCH)")
@@ -99,3 +100,7 @@ async function findMatchingPet(req, res) {
 //     res.redirect("/");
 //   }
 // }
+
+// *********** //
+// *REMOVE ME* //
+// *********** //
