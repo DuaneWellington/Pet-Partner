@@ -12,7 +12,7 @@ async function index(req, res) {
   // res.send("HOLDER: user index");
   try {
       const allUsers = await User.find({});
-      console.log(allUsers, "allUsers");
+      // console.log(allUsers, "allUsers");
 
       res.render('animals/users', {title: "All Users", users: allUsers})
   } catch (err) {
@@ -48,7 +48,8 @@ async function create(req, res) {
   try {
     const newUser = await User.create(userData);
     console.log(User, 'User Data')
-    res.redirect(`/animals/match/${newUser._id}`);
+    // res.redirect(`/animals/match/${newUser._id}`);
+    res.redirect('/match');
     // await User.create(userData);
     // Always redirect after CRUDing data
     // res.render('/animals/match', { errorMsg: err.message });

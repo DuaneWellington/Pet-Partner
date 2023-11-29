@@ -1,0 +1,41 @@
+<!-- PATH: views/animals/results.ejs -->
+
+<%- include('../partials/header') %>
+
+ <h2>Pet List</h2>
+ <table id="list">
+   <thead>
+     <tr>
+       <th>Pet Image</th>
+       <th>Pet Type</th>
+       <th>Pet Temperament</th>
+       <th>Pet Size</th>
+       <th>Pet Color</th>
+       <th>Pet Gender</th>
+       <th>Pet Age</th>
+       <th>Pet Environment</th>
+  
+     </tr>
+   </thead>
+   <tbody>
+     <!-- Write the line of EJS to iterate over pets using forEach -->
+     <% matchingPet.forEach( p => {  %>
+     <tr>
+      <td><img src="<%= p.petImage %>" alt="Pet Image"></td>
+         <td><%= p.petType %></td>
+         <td><%= p.petTemperament %></td>
+         <td><%= p.petSize %></td>
+         <td><%= p.petColor %></td>
+         <td><%= p.petGender %></td>
+         <td><%= p.petAge %></td>
+         <td><%= p.petEnvironment %></td>
+         <% if (p.isAvailable === true) { %>
+            <td><a href="/pets/<%= p._id %>">Pick Me</a></td> 
+          <% } %>
+     </tr>
+     <!-- Close the forEach using EJS here -->
+     <% }) %>
+   </tbody>
+ </table>
+
+ <%- include('../partials/footer') %>
