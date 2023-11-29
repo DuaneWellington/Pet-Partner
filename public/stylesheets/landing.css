@@ -1,19 +1,58 @@
+/* landing.css */
 * {
-    font-family: Arial;
-    color: darkblue; 
-    /* background-color: lightsalmon; */
-  }
+background-color: aquamarine;
+}
+body {
+  margin: 0;
+  font-family: fantasy;
+ 
+}
+
+#header {
+  text-align: center;
+  padding: 50px;
+}
+
+#hero-image {
+  text-align: center;
+}
+
+#carousel img {
   
-  /* body Styles
-  body {
+  max-width: 100%; 
+  max-height: 400px;
+  display: block;
+  margin: 0 auto; /* Centers the image */
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /* * {
+    font-family: fantasy;
+    color: darkblue;  */
+    /* background-color: lightsalmon; }*/
+ 
+   
+   /* body Styles */
+    
+   /* body {
     background-color: aqua;
     margin: 0;
     height: 100vh;
-  }
-
+  }   
+  #header {
+    font-family: fantasy;
+    color: rgb(200, 30, 70); 
+  } */
+/* 
   #carousel {
     height: 100px;
     width: 100px;
     justify-content: center;
     background-color: red;
-  } */
+  }  */ 
