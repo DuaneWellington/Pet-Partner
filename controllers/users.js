@@ -12,7 +12,7 @@ async function index(req, res) {
   // res.send("HOLDER: user index");
   try {
       const allUsers = await User.find({});
-      console.log(allUsers, "allUsers");
+      // console.log(allUsers, "allUsers");
 
       res.render('animals/users', {title: "Foster Parent Info Form", users: allUsers})
   } catch (err) {
@@ -36,27 +36,28 @@ async function create(req, res) {
     'firstName',
   ];
 
-  const missingFields = requiredFields.filter(field => !userData[field]);
-  if (missingFields.length > 0) {
-    return res.render('animals/users', {errorMsg: `Missing required fields: ${missingFields.join(', ')}`});
-  }
+  // const missingFields = requiredFields.filter(field => !userData[field]);
+  // if (missingFields.length > 0) {
+  //   return res.render('animals/users', {errorMsg: `Missing required fields: ${missingFields.join(', ')}`});
+  // }
 
-  if (userData.fosterAge <= 0) {
-    userData.fosterAge = 18
-  }
+  // if (userData.fosterAge <= 0) {
+  //   userData.fosterAge = 18
+  // }
 
   try {
     const newUser = await User.create(userData);
-    console.log(newUser, 'User Data')
-
+    // console.log(newUser, 'User Data')
+    req.session.userData = User;
     // Always redirect after CRUDing data
-    res.redirect(`/animals/match/${newUser._id}`);
+    res.redirect('/pets/match');
   } catch (err) {
     // Typically some sort of validation error
     console.log(err);
     // res.render('animals/users', { errorMsg: "Please complete all fields" });
   }
 };
+
 // SHOW
 
 function showMatchForm(req, res) {
@@ -71,7 +72,7 @@ function showMatchForm(req, res) {
       req.session.userData = user;
 
       // Redirect to the match page
-      res.redirect('/animals/match');
+      res.redirect('/pets/match');
     }
   });
 }
