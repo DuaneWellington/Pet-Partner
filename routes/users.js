@@ -11,7 +11,7 @@ router.get('/', usersCtrl.index)
 // router.get('/users', usersCtrl.index)
 
 //router -> POST /users
-router.post('/', usersCtrl.newUser)
+// router.post('/', usersCtrl.newUser)
 
 router.post('/', usersCtrl.create)
 
@@ -19,7 +19,7 @@ router.post('/', usersCtrl.create)
 router.get('/match/:id', usersCtrl.showMatchForm);
 
 // GET /animals/match
-router.get('/match', usersCtrl.renderMatchForm);
+router.get('/animals/match', usersCtrl.renderMatchForm);
 
 
 // //router -> GET /pets/:id
