@@ -17,4 +17,12 @@ router.post('/', petsCtrl.create)
 // //router -> GET /pets/:id
 // router.get('/:id', petsCtrl.show)
 
+  //  ******** TOP - DELETE FUNCTION FOR PET DATABASE - TOP ************
+
+  router.delete('/:id', petsCtrl.deletePet);
+
+  // ******** BOTTOM - DELETE FUNCTION FOR PET DATABASE - BOTTOM ************
+
+
+
 module.exports = router;

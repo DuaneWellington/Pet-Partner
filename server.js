@@ -1,3 +1,5 @@
+//server.js
+
 const createError = require('http-errors');
 const express = require('express');
 const session = require('express-session');
@@ -11,6 +13,8 @@ require('./config/database') // require the database
 const indexRouter = require('./routes/index');
 const petsRouter = require('./routes/pets');
 const usersRouter = require('./routes/users');
+
+const methodOverride = require('method-override');
 
 const app = express();
 
@@ -29,10 +33,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/pets', petsRouter);
 app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
