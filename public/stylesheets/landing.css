@@ -1,0 +1,100 @@
+/* landing.css */
+
+* {
+background-color: honeydew;
+}
+
+
+body {
+  margin: 0;
+  font-family: fantasy;
+ font-weight: 200;
+
+}
+
+#header {
+  text-align: center;
+  padding: 50px;
+}
+
+#hero-image {
+  text-align: center;
+}
+
+#carousel img {
+  
+  max-width: 700%; 
+  max-height: 500px;
+  display: block;
+  margin: 0 auto; /* Centers the image */
+  
+  border-radius: 25px;
+}
+ 
+ #landing-nav-buttons { 
+  text-align: center ;
+  margin: top 20px;
+ }
+ 
+ 
+#button-panel {
+  display: flex;
+  /* flex-direction: column; */
+   justify-content: center; 
+  height: 130 px;
+  width: 100%;
+  /* position: absolute; */
+  /* background-color: blue; */
+  
+}
+
+ 
+
+#button-panel button {
+  background-color: #f1b8e6ad; /* Green background color */
+  color: rgb(246, 173, 209);
+  padding: 10px 20px;
+  margin: 10px 100px 10px 100px ; 
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s; /* Add transition for the grow effect */
+  font-family: Phosphate; /* Set button font to fantasy */
+}
+
+
+#button-panel button:hover {
+  background-color: rgb(160, 214, 208); /* Darker green on hover */
+  transform: scale(1.1); /* Grow effect on hover */
+}
+ 
+ 
+ #welcome-msg h3 {
+  font-weight: bold;
+ }
+ /* * {
+    font-family: fantasy;
+    color: darkblue;  */
+    /* background-color: lightsalmon; }*/
+ 
+   
+   /* body Styles */
+    
+   /* body {
+    background-color: aqua;
+    margin: 0;
+    height: 100vh;
+  }   
+  #header {
+    font-family: fantasy;
+    color: rgb(200, 30, 70); 
+  } */
+/* 
+  #carousel {
+    height: 100px;
+    width: 100px;
+    justify-content: center;
+    background-color: red;
+  }  */ 

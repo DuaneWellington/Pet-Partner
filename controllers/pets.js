@@ -4,6 +4,9 @@ module.exports = {
     index,
     match: matchPet,
     findMatchingPet,
+    create,
+    deletePet
+    // show,
     show,
     // addToInvoice,
      // create,
@@ -70,6 +73,24 @@ async function findMatchingPet(req, res) {
       throw error;
     }
   }
+
+
+  //  ******** TOP - DELETE FUNCTION FOR PET DATABASE - TOP ************
+
+  async function deletePet(req, res) {
+    const petId = req.params.id;
+
+    try {
+      await Pet.deletePetById(petId);
+      res.redirect('/pets'); // Redirect to the pets listing page after deletion
+    } catch (err) {
+      console.error(err);
+      res.render('error', { error: err });
+    }
+  }
+
+  // ******** BOTTOM - DELETE FUNCTION FOR PET DATABASE - BOTTOM ************
+
 
 // //SHOW
     async function show(req, res, next) {

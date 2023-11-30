@@ -13,8 +13,9 @@ async function index(req, res) {
   try {
       const allUsers = await User.find({});
       // console.log(allUsers, "allUsers");
+      // console.log(allUsers, "allUsers");
 
-      res.render('animals/users', {title: "All Users", users: allUsers})
+      res.render('animals/users', {title: "Foster Parent Info Form", users: allUsers})
   } catch (err) {
       console.log('index error', err)
   }
@@ -36,29 +37,28 @@ async function create(req, res) {
     'firstName',
   ];
 
-  const missingFields = requiredFields.filter(field => !userData[field]);
-  if (missingFields.length > 0) {
-    return res.render('animals/users', {errorMsg: `Missing required fields: ${missingFields.join(', ')}`});
-  }
+  // const missingFields = requiredFields.filter(field => !userData[field]);
+  // if (missingFields.length > 0) {
+  //   return res.render('animals/users', {errorMsg: `Missing required fields: ${missingFields.join(', ')}`});
+  // }
 
-  if (userData.fosterAge <= 0) {
-    userData.fosterAge = 18
-  }
+  // if (userData.fosterAge <= 0) {
+  //   userData.fosterAge = 18
+  // }
 
   try {
     const newUser = await User.create(userData);
-    console.log(User, 'User Data')
-    // res.redirect(`/animals/match/${newUser._id}`);
-    res.redirect('/match');
-    // await User.create(userData);
+    // console.log(newUser, 'User Data')
+    req.session.userData = User;
     // Always redirect after CRUDing data
-    // res.render('/animals/match', { errorMsg: err.message });
+    res.redirect('/pets/match');
   } catch (err) {
     // Typically some sort of validation error
     console.log(err);
-    res.render('animals/users', { errorMsg: err.message });
+    // res.render('animals/users', { errorMsg: "Please complete all fields" });
   }
 };
+
 // SHOW
 
 function showMatchForm(req, res) {
@@ -67,18 +67,24 @@ function showMatchForm(req, res) {
   User.findById(userId, (err, user) => {
     if (err) {
       console.log(err);
-
       res.render('error', { error: err });
     } else {
-      res.render('animals/match', {title: 'Match Pet', user });
-    }
-  })
-}
+      // Store user data in the session
+      req.session.userData = user;
 
+      // Redirect to the match page
+      res.redirect('/pets/match');
+    }
+  });
+}
 
 function renderMatchForm(req, res) {
-  res.render('animals/match', { title: 'Find Match '});
-}
+    // Retrieve user data from the session
+    const userData = req.session.userData;
+  
+    // Render the 'match' page with user data
+    res.render('animals/match', { title: 'Find Match', user: userData });
+  }
 
   
   // //handle POST requests to /users
@@ -102,8 +108,8 @@ function renderMatchForm(req, res) {
   //   });
   
   //Add a new user
-  async function newUser(req, res) {
-    // res.render('animals/users')
+  function newUser(req, res) {
+    res.render('animals/users')
     // try {
     //   //create a new user instance
     //   const newUser = new User(req.body);
@@ -122,7 +128,7 @@ function renderMatchForm(req, res) {
     index,
     create,
     // users,
-     newUser,
+     new: newUser,
      showMatchForm,
      renderMatchForm,
     //  show

@@ -24,4 +24,12 @@ router.get('/:id', petsCtrl.show)
 //router -> navigate to the results page (results.ejs)
 //router.post('/results/:id, petsCtrl.results)
 
+  //  ******** TOP - DELETE FUNCTION FOR PET DATABASE - TOP ************
+
+  router.delete('/:id', petsCtrl.deletePet);
+
+  // ******** BOTTOM - DELETE FUNCTION FOR PET DATABASE - BOTTOM ************
+
+
+
 module.exports = router;
