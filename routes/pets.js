@@ -30,6 +30,8 @@ router.get('/:id', petsCtrl.show)
 
   // ******** BOTTOM - DELETE FUNCTION FOR PET DATABASE - BOTTOM ************
 
+// Post /invoice to show the pet selected along with the user information
+router.post('/:id', petsCtrl.addUserToPet)
 
 
 module.exports = router;

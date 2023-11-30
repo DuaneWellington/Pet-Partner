@@ -6,6 +6,7 @@ const Schema = mongoose.Schema; //declare Schema
 
 const userSchema = new Schema(
   {
+    // add oauth info here
     userInfo: {
       firstName: {type: String},
       lastName: {type: String},
