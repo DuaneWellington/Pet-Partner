@@ -1,6 +1,7 @@
 <!-- PATH: views/animals/invoice.ejs -->
 
-<%- include('..//') %>
+<%- include('../partials/header') %>
+
 <h1>Your Foster pets!</h1>
 
 <h2>User Information</h2>
@@ -14,125 +15,24 @@
       <th>City</th>
       <th>State</th>
       <th>Postal Code</th>
+      <th>Foster Start Date</th>
+      <th>Foster Length</th>
     </tr>
   </thead>
   <tbody>
 
     <tr>
-      <td><%= user.firstName %></td>
-      <td><%= user.lastName %></td>
-      <td><%= user.email %></td>
-      <td><%= user.phoneNo %></td>
-      <td><%= user.address.city %></td>
-      <td><%= user.address.fosterState %></td>
-      <td><%= user.address.postalCode %></td>
+      <td><%= user.userInfo.firstName %></td>
+      <td><%= user.userInfo.lastName %></td>
+      <td><%= user.userInfo.emailAddress %></td>
+      <td><%= user.userInfo.phoneNo %></td>
+      <td><%= user.userInfo.address.city %></td>
+      <td><%= user.userInfo.address.fosterState %></td>
+      <td><%= user.userInfo.address.postalCode %></td>
     </tr>
   </tbody>
 </table>
 
 <h2>Fostered Pets</h2>
-<table id="petList">
-  <thead>
-    <tr>
-      <th>Pet Image</th>
-      <th>Pet Type</th>
-      <th>Pet Temperament</th>
-      <th>Pet Size</th>
-      <th>Pet Color</th>
-      <th>Pet Gender</th>
-      <th>Pet Age</th>
-      <th>Pet Environment</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <% fosteredPets.forEach(p => { %>
-    <tr>
-      <td><img src="<%= p.petImage %>" alt="Pet Image"></td>
-      <td><%= p.petType %></td>
-      <td><%= p.petTemperament %></td>
-      <td><%= p.petSize %></td>
-      <td><%= p.petColor %></td>
-      <td><%= p.petGender %></td>
-      <td><%= p.petAge %></td>
-      <td><%= p.petEnvironment %></td>
-    </tr>
-    
-    <% }) %>
-  </tbody>
-</table>
-
-<h2>Foster Duration</h2>
-<p><strong>Start Date:</strong> <%= user.fosterStartDate %></p>
-<p><strong>End Date:</strong> <%= calculateEndDate(user.fosterStartDate, fosteredPets) %></p>
-
-<%- include('../partials/footer') %>
-
-
-
-
-
-
-
-
-<!-- PATH: views/animals/index.ejs -->
-
-<%- include('..//') %>
-<h1> Your Matched Fosters</h1>
-
-<h2>
-  
-<h2>your info</h2>
-<table id="list">
-  <thead>
-    <tr>
-      <th>userFirstName</th>
-      <th>User last name</th>
-      <th>Email adress</th>
-      <th>phone number</th>
-      <th>city</th>
-      <th>state</th>
-      <th>postalCode</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Write the line of EJS to iterate over pets using forEach -->
-   
-
-<h2>Pet List</h2>
-<table id="list">
-  <thead>
-    <tr>
-      <th>Pet Image</th>
-      <th>Pet Type</th>
-      <th>Pet Temperament</th>
-      <th>Pet Size</th>
-      <th>Pet Color</th>
-      <th>Pet Gender</th>
-      <th>Pet Age</th>
-      <th>Pet Environment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Write the line of EJS to iterate over pets using forEach -->
-    <% pets.forEach(p => { %>
-    <tr>
-      <td><img src="<%= p.petImage %>" alt="Pet Image"></td>
-      <td><%= p.petType %></td>
-      <td><%= p.petTemperament %></td>
-      <td><%= p.petSize %></td>
-      <td><%= p.petColor %></td>
-      <td><%= p.petGender %></td>
-      <td><%= p.petAge %></td>
-      <td><%= p.petEnvironment %></td>
-      <% if (p.isAvailable === true) { %>
-      <td><a href="/pets/<%= p._id %>">Pick Me</a></td>
-      <% } %>
-    </tr>
-    <!--  EJS here -->
-    <% }) %>
-  </tbody>
-</table>
 
 <%- include('../partials/footer') %>
