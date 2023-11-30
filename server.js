@@ -26,6 +26,7 @@ app.use(session({
   secret: 'duane-1',
   resave: false,
   saveUninitialized: true,
+  cookie: { secure: false }
 }));
 
 app.use(logger('dev'));
