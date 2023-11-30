@@ -37,11 +37,10 @@
           <!-- Add a new column with the delete form -->
       <td>
         <form
-          action="/pets/<%= p._id %>"
+          action="/pets/<%= p._id %>?_method=delete"
           method="POST"
           onsubmit="return confirm('Are you sure you want to delete this pet?');"
         >
-          <input type="hidden" name="_method" value="DELETE">
           <button type="submit">Delete</button>
         </form>
       </td>
