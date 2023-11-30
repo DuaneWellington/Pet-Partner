@@ -3,7 +3,7 @@
 module.exports = {
     index,
     match: matchPet,
-    findMatchingPet,
+
 
     deletePet,
     addUserToPet,
