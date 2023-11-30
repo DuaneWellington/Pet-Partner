@@ -13,6 +13,7 @@ async function index(req, res) {
   try {
       const allUsers = await User.find({});
       // console.log(allUsers, "allUsers");
+      // console.log(allUsers, "allUsers");
 
       res.render('animals/users', {title: "Foster Parent Info Form", users: allUsers})
   } catch (err) {
