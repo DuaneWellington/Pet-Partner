@@ -7,7 +7,8 @@ const Schema = mongoose.Schema
 //EX1: Foster Schema
 const fosterSchema = new Schema ({
     fosterer: {
-        type: String },
+        type: Schema.Types.ObjectId,
+        ref: 'User', },
 
     fosterDate: {
         type: Date },
