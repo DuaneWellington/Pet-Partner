@@ -3,6 +3,7 @@
 module.exports = {
     index,
     match: matchPet,
+<<<<<<< HEAD
     findMatchingPet,
 <<<<<<< HEAD
 deletePet,
@@ -10,6 +11,12 @@ deletePet,
     deletePet,
     addUserToPet,
 >>>>>>> a2bdfa23f166106db6620f54a9fe5f8adfe5b5d7
+=======
+
+
+    deletePet,
+    addUserToPet,
+>>>>>>> 50715b1511d154dcb5f1e790fa4eb48f33dc6ca6
     show,
 
     // addToInvoice,
