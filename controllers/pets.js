@@ -5,7 +5,7 @@ module.exports = {
     match: matchPet,
     findMatchingPet,
     create,
-    deletePet,
+
     show,
     // addToInvoice,
      // create,
