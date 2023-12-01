@@ -103,7 +103,31 @@ async function findMatchingPet(req, res) {
           next(Error(err));
         }
       }
-
+// When a user clicks the "pick-me" button this function will connect the userId to the petId to produce the final 'invoice' page which will show the user and pet information.
+      async function addUserToPet(req, res) {
+        const petId = req.params.id;
+        console.log("PET ID: ", petId)
+        const userId = "6568b96e6ea46a5aa6a3ad18"
+        //req.user
+        //console.log(req.user) //show the entire user obj removes line 120, modify line 125 found
+        // if userid length = 0, then we need to use this user object id: 6568b96e6ea46a5aa6a3ad18  (admin)
+        console.log("USER ID: ", userId)
+        try {
+          const foundUser = await User.findById(userId)
+          console.log("FOUND USER: ", foundUser)
+          const foundPet = await Pet.findById(petId)
+          console.log("FOUND PET: ", foundPet)
+          foundPet.isAvailable = false
+          const yourSelection = foundPet.foster.push(foundUser)
+          await foundPet.save()
+          console.log("PET AFTER SAVE: ", foundPet)
+          // res.render('animals/index', {title: "Invoice", pets: matchingArray} )
+          res.render('animals/invoice', {title: "Invoice", pets: yourSelection, user: foundUser} )
+        } catch (err) {
+          console.log(err)
+          res.redirect("/")
+        }
+      }
 // ADD THE PET TO THE USER "INVOICE"
 // async function addToInvoice(req, res) {
 //   const movieId = req.params.id;
