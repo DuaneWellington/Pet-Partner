@@ -3,21 +3,17 @@
 module.exports = {
     index,
     match: matchPet,
-
-
     deletePet,
     addUserToPet,
+    findMatchingPet,
     show,
-
-    // addToInvoice,
-     // create,
+     // create
 }
 
 const Pet = require('../models/pet')
 const User = require('../models/user')
 
 //MATCH (SHOW THE MATCH FORM)
-//test
 
 function matchPet (req, res) {
     console.log("FUNCTION:  MATCHPET(MATCH)")
@@ -133,19 +129,3 @@ async function addUserToPet(req, res) {
     res.redirect("/")
   }
 }
-
-// //  SHOW
-// async function show(req, res) {
-//   try {
-//     const movie = await Movie.findById(req.params.id)
-//     const allPerformers = await Performer.find({ _id: { $nin: movie.cast }}).sort('name');
-
-//     console.log('/ctrl/movies.js: Show -> allPerformers = ', allPerformers)
-
-//     res.render('movies/show', {title: 'Movie Detail', movie, performers: allPerformers });
-
-//   }catch (err) {
-//       console.log(err);
-//        res.render('/movies')
-//       }
-//   }
