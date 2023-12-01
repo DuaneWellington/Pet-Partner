@@ -29,13 +29,19 @@
   </head>
   <body>
     <nav>
+      <% if (user) { %>
       <a href="/users" <%- title === 'Foster a Pet' ? 'class="active"' : '' %>>FOSTER A PET</a>
 
       <a href="/pets/match" <%- title === 'Match Pet' ? 'class="active"' : '' %>>FIND MATCH</a>
       
       <a href="/pets" <%- title === 'All Pets' ? 'class="active"' : '' %>>ALL PETS</a>
+      <a href="/logout">LOG OUT</a>
+    <% } else { %>
+      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <% } %>
     </nav>
     <main>
       <h1><%= title %></h1>
     </main>
   </body>
+
