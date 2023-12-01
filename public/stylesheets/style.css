@@ -13,7 +13,7 @@ body {
   /* background-color: honeydew; */
     margin: 0;
     height: 100vh;
-    background-image: url('/images/backroundleaf.jpeg');
+    /* background-image: url('/images/backroundleaf.jpeg'); */
     width: 100%;
     justify-content: space-between;
     flex-direction: column;
