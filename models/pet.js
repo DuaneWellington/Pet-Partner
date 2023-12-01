@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema
 
-//EX1: Foster Schema
+//EX1: Adoption Schema
 const fosterSchema = new Schema ({
     fosterer: {
         type: Schema.Types.ObjectId,
@@ -54,7 +54,6 @@ const petSchema = new Schema({
         },
 
     petTemperament: {
-        type: String,
         enum: ['AFFECTIONATE', 'TIMID', 'INDEPENDENT', 'ENERGETIC']
     },
     petImage: {
@@ -79,5 +78,13 @@ petSchema.statics.deletePetById = async function (petId) {
 
   // ******** DELETE FUNCTION FOR PET DATABASE ************
 
-//compile the pet schema and export it
+  // ******** DELETE FUNCTION FOR PET DATABASE ************
+
+petSchema.statics.deletePetById = async function (petId) {
+    return this.deleteOne({ _id: petId });
+};
+
+  // ******** DELETE FUNCTION FOR PET DATABASE ************
+
+//compile the pets schema and export it
 module.exports = mongoose.model('Pet', petSchema)

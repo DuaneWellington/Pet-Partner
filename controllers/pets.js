@@ -7,11 +7,10 @@ module.exports = {
     addUserToPet,
     findMatchingPet,
     show,
-     // create
+    //create
 }
 
 const Pet = require('../models/pet')
-const User = require('../models/user')
 
 //MATCH (SHOW THE MATCH FORM)
 
