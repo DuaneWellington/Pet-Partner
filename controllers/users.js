@@ -9,7 +9,7 @@ const Pet = require('../models/pet');
 //INDEX
 
 async function index(req, res) {
-  // res.send("HOLDER: user index");
+  console.log("USER INDEX FUNCTION")
   try {
       const allUsers = await User.find({});
       // console.log(allUsers, "allUsers");
@@ -23,11 +23,12 @@ async function index(req, res) {
 
 // CREATE
 async function create(req, res) {
+  console.log("USER CREATE FUNCTION")
   // console.log(req.user)
   // console.log(req.body)
   req.body.googleId = req.user.googleId
   const userData = {...req.body};
-  console.log(userData)
+  console.log("USER DATA: ", userData)
   const requiredFields = [
     'fosterStartDate',
     'googleId',
@@ -41,15 +42,6 @@ async function create(req, res) {
     'lastName',
     'firstName',
   ];
-
-  // const missingFields = requiredFields.filter(field => !userData[field]);
-  // if (missingFields.length > 0) {
-  //   return res.render('animals/users', {errorMsg: `Missing required fields: ${missingFields.join(', ')}`});
-  // }
-
-  // if (userData.fosterAge <= 0) {
-  //   userData.fosterAge = 18
-  // }
 
   try {
     const newUser = await User.create(userData);
@@ -90,43 +82,10 @@ function renderMatchForm(req, res) {
     // Render the 'match' page with user data
     res.render('animals/match', { title: 'Find Match', user: userData });
   }
-
-  
-  // //handle POST requests to /users
-  // router.post('/', async (req, res) => {
-  //   try {
-  //     // Get data from the form submission
-  //     const userData = req.body;
-
-  //     // Create a new user instance with the form data
-  //     const newUser = new User(userData);
-
-  //     //Save the new user to the database
-  //     await newUser.save();
-
-  //     //Render form
-  //     res.render('/aminals/users', {title: "New User", errorMsg: '' });
-  //   } catch (error) {
-  //     //Handle errors
-  //     res.render('error', { error });
-  //   }
-  //   });
   
   //Add a new user
   function newUser(req, res) {
     res.render('animals/users')
-    // try {
-    //   //create a new user instance
-    //   const newUser = new User(req.body);
-    //   //Save new user to the database
-    //   await newUser.save();
-    //   // res.render('users/new', {title: "Add new User", users: await User.findById(req.params.id)})
-
-    //   res.redirect(`/users/${newUser._id}`);
-    // } catch (err) {
-    //     console.log(err);
-    //     res.render('error', { error: err });
-    // }
   };
 
   module.exports = {
