@@ -12,6 +12,7 @@ module.exports = {
 }
 
 const Pet = require('../models/pet')
+const User = require('../models/user');
 
 //MATCH (SHOW THE MATCH FORM)
 
@@ -109,7 +110,7 @@ async function addUserToPet(req, res) {
   console.log("PET ID: ", petId)
   const userId = "6568b96e6ea46a5aa6a3ad18"
   //req.user 
-  //console.log(req.user) //show the entire user obj removes line 120, modify line 125 found 
+  console.log(req.user) //show the entire user obj removes line 120, modify line 125 found 
   // if userid length = 0, then we need to use this user object id: 6568b96e6ea46a5aa6a3ad18  (admin)
   console.log("USER ID: ", userId)
 
