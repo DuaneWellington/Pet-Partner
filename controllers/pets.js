@@ -106,6 +106,7 @@ async function findMatchingPet(req, res) {
 // When a user clicks the "pick-me" button this function will connect the userId to the petId to produce the final 'invoice' page which will show the user and pet information.
 
 async function addUserToPet(req, res) {
+  console.log(req.user)
   const petId = req.params.id;
   console.log("PET ID: ", petId)
   const userId = "6568b96e6ea46a5aa6a3ad18"
@@ -122,7 +123,7 @@ async function addUserToPet(req, res) {
     foundPet.isAvailable = false
     const yourSelection = foundPet.foster.push(foundUser)
     await foundPet.save()
-    console.log("PET AFTER SAVE: ", foundPet)
+    console.log("PET AFTER SAVE: ", yourSelection)
     // res.render('animals/index', {title: "Invoice", pets: matchingArray} )
     res.render('animals/invoice', {title: "Invoice", pets: yourSelection, user: foundUser} )
   } catch (err) {
