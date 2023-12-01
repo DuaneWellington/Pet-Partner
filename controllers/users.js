@@ -23,9 +23,12 @@ async function index(req, res) {
 
 // CREATE
 async function create(req, res) {
+  console.log(req.user)
+  console.log(req.body)
   const userData = {...req.body};
   const requiredFields = [
     'fosterStartDate',
+    'googleId',
     'phoneNo',
     'address.postalCode',
     'address.fosterState',

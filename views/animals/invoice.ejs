@@ -34,5 +34,31 @@
 </table>
 
 <h2>Fostered Pets</h2>
+<table id="petInfoTable">
+  <thead>
+    <tr>
+      <th>Pet Image</th>
+      <th>Pet Type</th>
+      <th>Pet Temperament</th>
+      <th>Pet Size</th>
+      <th>Pet Color</th>
+      <th>Pet Gender</th>
+      <th>Pet Age</th>
+      <th>Pet Environment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+          <td><%= pets.petType %></td>
+          <td><%= pets.petTemperament %></td>
+          <td><%= pets.petSize %></td>
+          <td><%= pets.petColor %></td>
+          <td><%= pets.petGender %></td>
+          <td><%= pets.petAge %></td>
+          <td><%= pets.petEnvironment %></td>
+        </tr>
+      
+  </tbody>
+</table>
 
 <%- include('../partials/footer') %>

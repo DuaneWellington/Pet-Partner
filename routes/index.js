@@ -12,14 +12,14 @@ router.get('/auth/google', passport.authenticate(
     // Requesting the user's profile and email
     scope: ['profile', 'email'],
     // Optionally force pick account every time
-    // prompt: "select_account"
+    prompt: "select_account"
   }
 ));
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
     successRedirect: '/pets',
-    failureRedirect: '/pets'
+    failureRedirect: 'www.google.com'
   }
 ));
 router.get('/logout', function(req, res){

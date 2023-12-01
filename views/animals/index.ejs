@@ -31,7 +31,10 @@
          <td><%= p.petEnvironment %></td>
          <td>
          <% if (p.isAvailable === true) { %>
-            <td><form action="/pets/<%= p.id %>"method="POST"><button>Pick Me</button></form>
+            <td><form 
+              action="/pets/<%= p._id %> "method="POST">
+              <button id="pickMeBtn">Pick Me</button>
+            </form>
           <% } %>
           <!-- when pick me is clicked add the pet to the user, then show the invoice -->
           </td>

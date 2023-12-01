@@ -4,6 +4,7 @@ module.exports = {
     index,
     match: matchPet,
     deletePet,
+    show,
     addUserToPet,
     findMatchingPet,
     show,
@@ -11,6 +12,7 @@ module.exports = {
 }
 
 const Pet = require('../models/pet')
+const User = require('../models/user');
 
 //MATCH (SHOW THE MATCH FORM)
 
@@ -104,11 +106,12 @@ async function findMatchingPet(req, res) {
 // When a user clicks the "pick-me" button this function will connect the userId to the petId to produce the final 'invoice' page which will show the user and pet information.
 
 async function addUserToPet(req, res) {
+  console.log(req.user)
   const petId = req.params.id;
   console.log("PET ID: ", petId)
   const userId = "6568b96e6ea46a5aa6a3ad18"
   //req.user 
-  //console.log(req.user) //show the entire user obj removes line 120, modify line 125 found 
+  console.log(req.user) //show the entire user obj removes line 120, modify line 125 found 
   // if userid length = 0, then we need to use this user object id: 6568b96e6ea46a5aa6a3ad18  (admin)
   console.log("USER ID: ", userId)
 
@@ -120,7 +123,7 @@ async function addUserToPet(req, res) {
     foundPet.isAvailable = false
     const yourSelection = foundPet.foster.push(foundUser)
     await foundPet.save()
-    console.log("PET AFTER SAVE: ", foundPet)
+    console.log("PET AFTER SAVE: ", yourSelection)
     // res.render('animals/index', {title: "Invoice", pets: matchingArray} )
     res.render('animals/invoice', {title: "Invoice", pets: yourSelection, user: foundUser} )
   } catch (err) {

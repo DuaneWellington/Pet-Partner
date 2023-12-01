@@ -36,3 +36,8 @@ passport.use(new GoogleStrategy (
       passport.serializeUser(function(user, cb) {
         cb(null, user._id);
       });
+
+      passport.deserializeUser(async function(userId, cb) {
+        // It's nice to be able to use await in-line!
+        cb(null, await User.findById(userId));
+      });
