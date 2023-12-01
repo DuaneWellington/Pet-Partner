@@ -1,4 +1,4 @@
-<!-- PATH: views/animals/index.ejs -->
+<!-- PATH: views/animals/results.ejs -->
 
 <%- include('../partials/header') %>
 
@@ -14,12 +14,12 @@
        <th>Pet Gender</th>
        <th>Pet Age</th>
        <th>Pet Environment</th>
-       <th>Action</th>  <!-- Add a new column for the delete button -->
+  
      </tr>
    </thead>
    <tbody>
      <!-- Write the line of EJS to iterate over pets using forEach -->
-     <% pets.forEach( p => {  %>
+     <% matchingPet.forEach( p => {  %>
      <tr>
       <td><img src="<%= p.petImage %>" alt="Pet Image"></td>
          <td><%= p.petType %></td>
@@ -29,29 +29,13 @@
          <td><%= p.petGender %></td>
          <td><%= p.petAge %></td>
          <td><%= p.petEnvironment %></td>
-         <td>
          <% if (p.isAvailable === true) { %>
-            <td><form action="/pets/<%= p.id %>"method="POST"><button>Pick Me</button></form>
+            <td><a href="/pets/<%= p._id %>">Pick Me</a></td> 
           <% } %>
-          <!-- when pick me is clicked add the pet to the user, then show the invoice -->
-          </td>
-          <!-- Add a new column with the delete form -->
-      <td>
-        <form
-          action="/pets/<%= p._id %>?_method=delete"
-          method="POST"
-          onsubmit="return confirm('Are you sure you want to delete this pet?');"
-        >
-          <button id="deleteBtn" type="submit">Delete</button>
-        </form>
-      </td>
-    </tr>
-    <!-- Close the forEach using EJS here -->
-    <% }) %>
-  </tbody>
-</table>
+     </tr>
+     <!-- Close the forEach using EJS here -->
+     <% }) %>
+   </tbody>
+ </table>
 
-
-
- 
  <%- include('../partials/footer') %>

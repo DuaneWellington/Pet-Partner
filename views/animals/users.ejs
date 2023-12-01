@@ -1,0 +1,124 @@
+<!-- PATH: views/animals/users.ejs -->
+
+<%- include('../partials/header') %>
+
+
+<h2>Tell Us About Yourself!</h2>
+<form id="user-form" action="/users" method="POST">
+  <label>First Name:
+    <input type="String" name="userInfo.firstName">
+  </label>
+
+  <label>Last Name:
+    <input type="String" name="userInfo.lastName">
+  </label>
+
+  <label>Age:
+    <input type="Number" name="fosterAge">
+  </label><br>
+
+  <label>Street Address 1:
+    <input type="String" name="userInfo.address.street1">
+  </label><br>
+  <label>Street Address 2:
+    <input type="String" name="userInfo.address.street2">
+  </label><br>
+  <label>City:
+    <input type="String" name="userInfo.address.city">
+  </label><br>
+  <label>State/Province:
+    <input type="String" name="userInfo.address.fosterState">
+  </label><br>
+  <label>Zip/Postal:
+    <input type="String" name="userInfo.address.postalCode">
+  </label><br>
+
+  <label>Country:
+    <select name="Country">
+          <option value="CANADA">CANADA</option>
+          <option value="UNITED STATES">UNITED STATES</option>
+    </select>
+  </label><br>
+
+
+  <label>Phone No:
+    <input type="number" name="phoneNo">
+  </label><br>
+  <label>Foster Start Date:
+    <input type="date" name="fosterStartDate">
+  </label><br>
+  <label>email:
+    <input type="String" name="emailAddress">
+  </label><br>
+
+  <label>Foster Duration:
+    <input type="radio" name="fosterLength" value="twoWeeks"> Two Weeks
+    <input type="radio" name="fosterLength" value="oneMonth"> One Month
+    <input type="radio" name="fosterLength" value="threeMonths"> Three Months
+    <input type="radio" name="fosterLength" value="sixWeeks"> Six Months
+  </label><br>
+
+  <button type="submit">Submit Form</button>
+</form>
+
+
+<%- include('../partials/footer') %>
+
+
+
+<!-- <label>State/Province:
+    <input type="String" name="fosterState">
+
+    <select name="Country">
+          <option value="Alabama">AL/option>
+          <option value="Alaska">AK/option>
+          <option value="Arizona">AZ/option>
+            <option value="Arkansas">AR/option>
+              <option value="California">CA/option>
+                <option value="Colorado">CO/option>
+                  <option value="Connecticut">CT/option>
+                    <option value="Delaware">DE/option>
+                      <option value="DC">DC/option>
+                        <option value="Florida">FL/option>
+          <option value="Georgia">GA/option>
+            <option value="Hawaii">HI/option>
+              <option value="Idaho">ID/option>
+                <option value="Illinois">IL/option>
+                  <option value="Indiana">IN/option>
+                    <option value="Iowa">IA/option>
+                      <option value="Kansas">KS/option>
+                        <option value="Kentucky">KY/option>
+                          <option value="Louisiana">LA/option>
+                            <option value="Maine">ME/option>
+          <option value="Maryland">MD/option>
+            <option value="Massachusetts">MA/option>
+              <option value="Michigan">MI/option>
+                <option value="Minnesota">MN/option>
+                  <option value="Mississippi">MS/option>
+                    <option value="Missouri">MO/option>
+                      <option value="Montana">MT/option>
+                        <option value="Nebraska">NE/option>
+                          <option value="Nevada">NV/option>
+                            <option value="New Hampshire">NH/option>
+          <option value="New Jersey">NJ/option>
+            <option value="New Mexico">NM/option>
+              <option value="New York">NY/option>
+                <option value="North Carolina">NC/option>
+                  <option value="North Dakota">ND/option>
+                    <option value="Ohio">OH/option>
+                      <option value="Oklahoma">OK/option>
+                        <option value="Oregon">OR/option>
+                          <option value="Pennsylvania">PA/option>
+                            <option value="Rhode Island">RI/option>
+          <option value="South Carolina">SC/option>
+            <option value="South Dakota">SD/option>
+              <option value="Tennessee">TN/option>
+                <option value="Texas">TX/option>
+                  <option value="Utah">UT/option>
+                    <option value="Vermont">VT/option>
+                      <option value="Virginia">VA/option>
+                        <option value="West Virginia">WV/option>
+                          <option value="Wisconsin">WI/option>
+                            <option value="Wyoming">WY/option>
+    </select>
+  </label><br> -->

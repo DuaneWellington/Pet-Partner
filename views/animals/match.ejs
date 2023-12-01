@@ -1,9 +1,12 @@
 <!-- PATH: views/animals/match.ejs -->
 
-<%- include('../partials/header') %>
+<%- include('../partials/header') %> 
+
+
 
 <h2>What pet would you like to find?</h2>
-<form id="match-form" action="/pets" method="POST">
+<form id="match-form" action="/pets/findMatch" method="POST">
+  <!-- <form id="match-form" action="/pets/findMatch" method="POST"></form> -->
   <label>Pet Type:
     <select name="petType">
         <option value="CAT">CAT</option>
@@ -66,11 +69,11 @@
   </label><br>
 
   <label>Pet Classification:
-    <input type="checkbox" name="spayed_neutered">
-    <input type="checkbox" name="house_trained" checked>
-    <input type="checkbox" name="declawed">
-    <input type="checkbox" name="special_needs">
-    <input type="checkbox" name="shots_current">
+    <input type="checkbox" name="spayed_neutered">Spayed/Neutered
+    <input type="checkbox" name="house_trained" checked>House Trained
+    <input type="checkbox" name="declawed">Declawed
+    <input type="checkbox" name="special_needs">Special Needs
+    <input type="checkbox" name="shots_current">Shots Current
   </label><br>
 
   <label>Pet Temperament:
@@ -86,5 +89,13 @@
 </form>
 
 <p><%= errorMsg %></p>
+<!-- 
+<%- include('../partials/header') %>  -->
 
-<%- include('../partials/header') %>
+
+<!-- Buttons at the bottom -->
+<!-- <div style="margin-top: 20px;">
+  <button type="submit">Find my Pet</button>
+</div> -->
+
+<%- include('../partials/footer') %>

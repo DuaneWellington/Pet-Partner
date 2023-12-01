@@ -7,7 +7,8 @@ const Schema = mongoose.Schema
 //EX1: Adoption Schema
 const fosterSchema = new Schema ({
     fosterer: {
-        type: String },
+        type: Schema.Types.ObjectId,
+        ref: 'User', },
 
     fosterDate: {
         type: Date },
@@ -69,5 +70,21 @@ const petSchema = new Schema({
   });
 
 
-//compile the flight schema and export it
+  // ******** DELETE FUNCTION FOR PET DATABASE ************
+
+petSchema.statics.deletePetById = async function (petId) {
+    return this.deleteOne({ _id: petId });
+};
+
+  // ******** DELETE FUNCTION FOR PET DATABASE ************
+
+  // ******** DELETE FUNCTION FOR PET DATABASE ************
+
+petSchema.statics.deletePetById = async function (petId) {
+    return this.deleteOne({ _id: petId });
+};
+
+  // ******** DELETE FUNCTION FOR PET DATABASE ************
+
+//compile the pets schema and export it
 module.exports = mongoose.model('Pet', petSchema)
