@@ -54,6 +54,7 @@ const petSchema = new Schema({
         },
 
     petTemperament: {
+        type: String,
         enum: ['AFFECTIONATE', 'TIMID', 'INDEPENDENT', 'ENERGETIC']
     },
     petImage: {

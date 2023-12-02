@@ -41,14 +41,14 @@ The Admin/Staff application will allow the user to delete pets from the database
 - Javascript
 - Express
 - Mongoose
-- Mongodb
+- MongoDB
 - Nodejs
 - OAuth
 - CSS / HTML
 
 # Getting Started:
 
-Navigate to the following:  <deployment URL>
+Navigate to the following: [Launch Pet Partner](https://pet-partners-1c56ce19ad35.herokuapp.com/)
 
 # Fast Follow Items/Future Enhancements
 - Widen match criteria to include best match, sorted from closest to least
