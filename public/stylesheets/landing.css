@@ -42,6 +42,8 @@ body {
    justify-content: center; 
   height: 130 px;
   width: 100%;
+  /* background-color: blue; */
+  margin: 50px;
   /* position: absolute; */
   /* background-color: blue; */
   
@@ -70,3 +72,47 @@ body {
  #welcome-msg h3 {
   font-weight: bold;
  }
+
+ body > nav {
+  grid-area: nav;
+  background-color: #bad7d2; 
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+} 
+/* // */
+nav > a {
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #070101;
+  background-color: #7ee5bd;
+}
+
+nav > a:hover {
+  color: #61c07f;
+  background-color: #7ee5bd;
+}
+nav > button {
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav > button:hover:not(.active) {
+  color: #61c07f;
+  background-color: #7ee5bd;  
+}
+
+nav > button.active {
+  color: #070101;
+  cursor: default;
+}
