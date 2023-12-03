@@ -29,6 +29,8 @@
       <td><%= user.userInfo.address.city %></td>
       <td><%= user.userInfo.address.fosterState %></td>
       <td><%= user.userInfo.address.postalCode %></td>
+      <td><%= user.userInfo.fosterStartDate %></td>
+
     </tr>
   </tbody>
 </table>
@@ -37,14 +39,12 @@
 <table id="petInfoTable">
   <thead>
     <tr>
-      <th>Pet Image</th>
       <th>Pet Type</th>
       <th>Pet Temperament</th>
       <th>Pet Size</th>
       <th>Pet Color</th>
       <th>Pet Gender</th>
       <th>Pet Age</th>
-      <th>Pet Environment</th>
     </tr>
   </thead>
   <tbody>
@@ -55,7 +55,6 @@
           <td><%= pets.petColor %></td>
           <td><%= pets.petGender %></td>
           <td><%= pets.petAge %></td>
-          <td><%= pets.petEnvironment %></td>
         </tr>
       
   </tbody>
