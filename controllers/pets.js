@@ -107,7 +107,9 @@ async function findMatchingPet(req, res) {
 
 async function addUserToPet(req, res) {
   console.log(req.user)
-  const petId = req.params.id;
+  // const petId = req.params.id;
+  const petId = req.params.id === 'findMatch' ? 'findMatch' : req.params.id;
+
   console.log("PET ID: ", petId)
   const userId = "6568b96e6ea46a5aa6a3ad18"
   //req.user 
@@ -118,7 +120,9 @@ async function addUserToPet(req, res) {
   try {
     const foundUser = await User.findById(userId)
     console.log("FOUND USER: ", foundUser)
-    const foundPet = await Pet.findById(petId)
+    // const foundPet = await Pet.findById(petId)
+    const foundPet = await Pet.findOne({ name: 'findMatch' });
+
     console.log("FOUND PET: ", foundPet)
     foundPet.isAvailable = false
     const yourSelection = foundPet.foster.push(foundUser)

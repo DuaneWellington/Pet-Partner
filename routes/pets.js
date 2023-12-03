@@ -12,13 +12,13 @@ router.get('/', petsCtrl.index)
 //router -> GET /pets/match
 router.get('/match', petsCtrl.match)
 
-// Post /invoice to show the pet selected along with the user information
-router.post('/:id', petsCtrl.addUserToPet)
-
-
 //router -> GET / 
 router.post('/findMatch', petsCtrl.findMatchingPet)
 // router.post('/findMatch', petsCtrl.findMatchingPet)
+
+// Post /invoice to show the pet selected along with the user information
+router.post('/:id', petsCtrl.addUserToPet)
+
 
 // router -> POST /pets
 // router.post('/', petsCtrl.create)
