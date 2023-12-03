@@ -19,22 +19,22 @@ The Admin/Staff application will allow the user to delete pets from the database
 # Screenshots
 
 - Landing Page:
-![](./public/images/PetPartnerLanding.png)
+![](./public/images/RM_LandingPage.png)
 
 - All Pets:
-![](./public/images/PetPartnerIndex.png)
+![](./public/images/RM_PetsListMain2.png)
 
 - User Profile Form:
-![](./public/images/PetPartnerUserInfoForm.png)
+![](./public/images/RM_UserForm1.png)
 
 - Pet Match Form:
-![](./public/images/PetPartnerMatchForm.png)
+![](./public/images/RM_MatchFormDrop1.png)
 
 - Match Results:
-![](./public/images/PetPartnerResults.png)
+![](./public/images/RM_ResultsPage.png)
 
 - Invoice/Confirmation:
-![](./public/images/PetPartnerInvoice.png)
+![](./public/images/RM_Invoice.png)
 
 
 # Technologies Used:
@@ -50,8 +50,13 @@ The Admin/Staff application will allow the user to delete pets from the database
 
 Navigate to the following: [Launch Pet Partner](https://pet-partners-1c56ce19ad35.herokuapp.com/)
 
+# Project Management Link (Trello):
+
+Navigate to the project in Trello [here](https://trello.com/b/mQe09azH/project-2-pet-adoptions-jobs-rentals)
+
 # Fast Follow Items/Future Enhancements
 - Widen match criteria to include best match, sorted from closest to least
 - Select mulitple fosters on the results page
 - leverage pet**** API to use real animals
 - CSS updates to add more polish to the experience
+- Various logic handling conditions 
