@@ -47,13 +47,14 @@ async function findMatchingPet(req, res) {
     try {
       const matchingArray = []  // set up an empty array to be used to push the data found from the db collection
       // Search for a pet with matching criteria
-      // const matchingPet = await Pet.findOne({  *ONLY ONE RESULT
+
       const matchingPet = await Pet.find({
         petType: req.body.petType,
         // petColor: req.body.petColor,
         // petSize: req.body.petSize,
        });
        matchingArray.push(...matchingPet) // this is needed as the index page is expecting the data to be in an array format
+
 
       // FOR TESTING ONLY Return the matching pet or null if not found
       // if no match show only the matching petType 
@@ -94,6 +95,7 @@ async function findMatchingPet(req, res) {
 async function addUserToPet(req, res) {
   const petId = req.params.id;
   // NOTE: Synthesizing the userID with a known userID for testing purposes.
+
   const userId = "656bfab3b0c4f0d0755e6bf8"
  
   try {

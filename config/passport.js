@@ -1,3 +1,4 @@
+// PATH: config/passport.js
 
 const passport = require('passport'); 
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy; 
@@ -38,6 +39,6 @@ passport.use(new GoogleStrategy (
       });
 
       passport.deserializeUser(async function(userId, cb) {
-        // It's nice to be able to use await in-line!
+        
         cb(null, await User.findById(userId));
       });
