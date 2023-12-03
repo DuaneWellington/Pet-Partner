@@ -4,8 +4,9 @@ module.exports = {
     index,
     match: matchPet,
     deletePet,
-    findMatchingPet,
+    show,
     addUserToPet,
+    findMatchingPet,
     show,
     //create
 }
@@ -28,7 +29,7 @@ async function index(req, res) {
         const allPets = await Pet.find({})
         // console.log(allPets, "allPets")
 
-        res.render('animals/index', {title: "Pets Library", pets: allPets})
+        res.render('animals/index', {title: "All Pets", pets: allPets})
     }catch (err) {
         console.log('index error', err)
     }
@@ -63,7 +64,6 @@ async function findMatchingPet(req, res) {
       // FOR TESTING ONLY Return the matching pet or null if not found
      
       // if no match show only the matching petType
-      console.log("MATCHING ARRAY = ", matchingArray)
       
       res.render('animals/index', {title: "Results", pets: matchingArray} )
       // res.send(matchingPet)
@@ -106,24 +106,22 @@ async function findMatchingPet(req, res) {
 // When a user clicks the "pick-me" button this function will connect the userId to the petId to produce the final 'invoice' page which will show the user and pet information.
 
 async function addUserToPet(req, res) {
-  console.log("FUNCTION: ADD USER TO PET")
   console.log(req.user)
   // const petId = req.params.id;
   const petId = req.params.id === 'findMatch' ? 'findMatch' : req.params.id;
 
   console.log("PET ID: ", petId)
-  // NOTE: Synthesizing the userID with a known userID for testing purposes.
-  const userId = "656a65d5d3386d8cc9e3f96a"
+  const userId = "6568b96e6ea46a5aa6a3ad18"
   //req.user 
-  console.log(req.user) //NOTE: Show the entire user obj removes line 120, modify line 125 found 
+  console.log(req.user) //show the entire user obj removes line 120, modify line 125 found 
   // if userid length = 0, then we need to use this user object id: 6568b96e6ea46a5aa6a3ad18  (admin)
   console.log("USER ID: ", userId)
 
   try {
     const foundUser = await User.findById(userId)
     console.log("FOUND USER: ", foundUser)
-    // const foundPet = await Pet.findById(petId)
-    const foundPet = await Pet.findOne({ name: 'findMatch' });
+    const foundPet = await Pet.findById(petId)
+    // const foundPet = await Pet.findOne({ name: 'findMatch' });
 
     console.log("FOUND PET: ", foundPet)
     foundPet.isAvailable = false
@@ -131,8 +129,7 @@ async function addUserToPet(req, res) {
     await foundPet.save()
     console.log("PET AFTER SAVE: ", yourSelection)
     // res.render('animals/index', {title: "Invoice", pets: matchingArray} )
-    // res.render('animals/invoice', {title: "Invoice", pets: yourSelection, user: foundUser} )
-    res.render('animals/invoice', {title: "Invoice", pets: foundPet, user: foundUser} )
+    res.render('animals/invoice', {title: "Invoice", pets: yourSelection, user: foundUser} )
   } catch (err) {
     console.log(err)
     res.redirect("/")

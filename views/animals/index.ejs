@@ -2,7 +2,7 @@
 
 <%- include('../partials/header') %>
 
- <h2>Pets list</h2>
+ <h2>Pet List</h2>
  <table id="list">
    <thead>
      <tr>
@@ -21,9 +21,9 @@
      <!-- Write the line of EJS to iterate over pets using forEach -->
      <% pets.forEach( p => {  %>
      <tr>
-      <td><img src="<%= p.petImage %>" id="petThumbnail" alt="Pet Image"></td>
+      <td><img src="<%= p.petImage %>" alt="Pet Image"></td>
          <td><%= p.petType %></td>
-         <td><%= p.petTemperament%></td>
+         <td><%= p.petTemperament %></td>
          <td><%= p.petSize %></td>
          <td><%= p.petColor %></td>
          <td><%= p.petGender %></td>
