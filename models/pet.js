@@ -71,19 +71,19 @@ const petSchema = new Schema({
   });
 
 
-  // ******** DELETE FUNCTION FOR PET DATABASE ************
+//   // ******** DELETE FUNCTION FOR PET DATABASE ************
 
-petSchema.statics.deletePetById = async function (petId) {
-    return this.deleteOne({ _id: petId });
-};
+// petSchema.statics.deletePetById = async function (petId) {
+//     return this.deleteOne({ _id: petId });
+// };
 
-  // ******** DELETE FUNCTION FOR PET DATABASE ************
+//   // ******** DELETE FUNCTION FOR PET DATABASE ************
 
-  // ******** DELETE FUNCTION FOR PET DATABASE ************
+//   // ******** DELETE FUNCTION FOR PET DATABASE ************
 
-petSchema.statics.deletePetById = async function (petId) {
-    return this.deleteOne({ _id: petId });
-};
+// petSchema.statics.deletePetById = async function (petId) {
+//     return this.deleteOne({ _id: petId });
+// };
 
   // ******** DELETE FUNCTION FOR PET DATABASE ************
 
