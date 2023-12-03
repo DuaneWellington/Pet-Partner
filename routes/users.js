@@ -21,14 +21,4 @@ router.get('/match/:id', usersCtrl.showMatchForm);
 // GET /animals/match
 router.get('/animals/match', usersCtrl.renderMatchForm);
 
-
-// //router -> GET /pets/:id
-// router.get('/:id', usersCtrl.show)
-
-/* GET users page. */
-// router.get('/', function(req, res, next) {
-//     res.redirect('/users');
-//   });
-  
-
 module.exports = router

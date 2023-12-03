@@ -70,22 +70,4 @@ const petSchema = new Schema({
     timestamps: true //use this to use the mogoose createdAt and updatedAt fields.
   });
 
-
-//   // ******** DELETE FUNCTION FOR PET DATABASE ************
-
-// petSchema.statics.deletePetById = async function (petId) {
-//     return this.deleteOne({ _id: petId });
-// };
-
-//   // ******** DELETE FUNCTION FOR PET DATABASE ************
-
-//   // ******** DELETE FUNCTION FOR PET DATABASE ************
-
-// petSchema.statics.deletePetById = async function (petId) {
-//     return this.deleteOne({ _id: petId });
-// };
-
-  // ******** DELETE FUNCTION FOR PET DATABASE ************
-
-//compile the pets schema and export it
 module.exports = mongoose.model('Pet', petSchema)

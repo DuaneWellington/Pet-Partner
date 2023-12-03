@@ -9,12 +9,9 @@ const Pet = require('../models/pet');
 //INDEX
 
 async function index(req, res) {
-  console.log("USER INDEX FUNCTION")
+ 
   try {
       const allUsers = await User.find({});
-      // console.log(allUsers, "allUsers");
-      // console.log(allUsers, "allUsers");
-
       res.render('animals/users', {title: "Foster Parent Info Form", users: allUsers})
   } catch (err) {
       console.log('index error', err)
@@ -23,9 +20,6 @@ async function index(req, res) {
 
 // CREATE
 async function create(req, res) {
-  console.log("USER CREATE FUNCTION")
-  // console.log(req.user)
-  // console.log(req.body)
   req.body.googleId = req.user.googleId
   const userData = {...req.body};
   console.log("USER DATA: ", userData)
